@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Books</title>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>-->
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Books </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> Title</th>
+                    <th> Author</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${books.empty}">
+                    <td>
+                        No available books
+                    </td>
+                </tr>
+                <tr th:each="book : ${books}">
+                    <td>
+                        <span th:text="${book.title}">Title</span>
+                    </td>
+                    <td>
+                        <span th:text="${book.author}">Author</span>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+</body>
+</html>
